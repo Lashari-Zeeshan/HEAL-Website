@@ -3,320 +3,1162 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HEAL | Health, Education, Action & Leadership</title>
+<title>HEAL | Empowering Futures Through Education & Leadership</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-
-:root{
---primary:#1f6f5c;
---primary-dark:#174d40;
---accent:#f4a261;
---dark:#1a1a1a;
---light:#f9fbfb;
---white:#fff;
---gray:#666;
---shadow:0 15px 40px rgba(0,0,0,0.08);
---transition:all .4s ease;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Poppins',sans-serif;background:var(--light);color:var(--dark);line-height:1.7}
-h1,h2,h3{font-family:'Playfair Display',serif}
-.container{max-width:1200px;margin:auto;padding:0 20px}
-.section{padding:100px 0}
-.text-center{text-align:center}
-img{max-width:100%;display:block}
-
-/* NAVBAR */
-.navbar{
-position:fixed;width:100%;padding:15px 0;z-index:1000;
-transition:var(--transition);
-}
-.navbar.scrolled{
-background:white;
-box-shadow:0 5px 25px rgba(0,0,0,.08);
-}
-.nav-container{
-display:flex;justify-content:space-between;align-items:center;
-}
-.logo img{height:55px}
-.nav-links{display:flex;gap:30px}
-.nav-links a{color:white;font-weight:500;position:relative}
-.navbar.scrolled .nav-links a{color:var(--dark)}
-.nav-links a::after{
-content:'';position:absolute;width:0;height:2px;background:var(--accent);
-left:0;bottom:-5px;transition:.3s;
-}
-.nav-links a:hover::after{width:100%}
-.hamburger{display:none;font-size:1.5rem;color:white;cursor:pointer}
-.navbar.scrolled .hamburger{color:var(--dark)}
-
-/* HERO */
-.hero{
-height:100vh;
-background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
-url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1600&q=80');
-background-size:cover;background-position:center;
-display:flex;align-items:center;justify-content:center;
-text-align:center;color:white;
-}
-.hero h1{font-size:3.2rem;margin-bottom:20px}
-.hero p{max-width:650px;margin:auto;margin-bottom:35px;font-size:1.1rem}
-.btn{
-padding:14px 35px;border-radius:50px;border:none;
-cursor:pointer;font-weight:600;margin:5px;
-transition:var(--transition);
-}
-.btn-primary{background:var(--primary);color:white}
-.btn-primary:hover{background:var(--primary-dark)}
-.btn-accent{background:var(--accent);color:white}
-.btn-accent:hover{opacity:.9}
-
-/* ABOUT */
-.about-grid{
-display:grid;grid-template-columns:1fr 1fr;
-gap:60px;align-items:center;
-}
-.about-img img{
-border-radius:20px;box-shadow:var(--shadow);
-transition:.5s;
-}
-.about-img img:hover{transform:scale(1.05)}
-.about-text p{color:var(--gray)}
-
-/* MISSION */
-.mission-box{
-background:white;padding:70px;
-border-radius:25px;box-shadow:var(--shadow);
-max-width:900px;margin:auto;
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: #FFFFFF;
+  color: #1A2C3E;
+  line-height: 1.5;
 }
 
-/* GALLERY */
-.gallery-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-.gallery-item{
-position:relative;
-overflow:hidden;
-border-radius:20px;
-cursor:pointer;
-}
-.gallery-item img{
-height:280px;width:100%;object-fit:cover;
-transition:.5s;
-}
-.gallery-overlay{
-position:absolute;top:0;left:0;width:100%;height:100%;
-background:rgba(31,111,92,.8);
-display:flex;align-items:center;justify-content:center;
-opacity:0;transition:.4s;
-}
-.gallery-overlay i{
-color:white;font-size:2rem;
-}
-.gallery-item:hover img{transform:scale(1.1)}
-.gallery-item:hover .gallery-overlay{opacity:1}
-
-/* CTA */
-.cta{
-background:linear-gradient(135deg,var(--primary),var(--primary-dark));
-color:white;text-align:center;padding:80px 20px;
-}
-.cta h2{margin-bottom:20px}
-
-/* CONTACT */
-.contact-wrapper{
-display:grid;grid-template-columns:1fr 1fr;
-border-radius:25px;overflow:hidden;
-box-shadow:var(--shadow);
-}
-.contact-info{
-background:var(--primary);color:white;padding:60px;
-}
-.contact-form{background:white;padding:60px}
-.form-group{margin-bottom:20px}
-.form-group input,.form-group textarea{
-width:100%;padding:12px;border-radius:8px;
-border:1px solid #ddd;
-}
-.form-group textarea{height:120px;resize:none}
-
-/* FOOTER */
-.footer{
-background:#111;color:white;text-align:center;padding:30px 0;
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
-/* ANIMATION */
-.hidden{opacity:0;transform:translateY(40px);transition:1s}
-.show{opacity:1;transform:translateY(0)}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-.about-grid,.contact-wrapper{grid-template-columns:1fr}
-.nav-links{
-position:absolute;top:70px;right:-100%;
-background:white;flex-direction:column;width:220px;
-padding:25px;box-shadow:var(--shadow);transition:.4s;
-}
-.nav-links a{color:var(--dark)}
-.nav-links.active{right:20px}
-.hamburger{display:block}
+h1 {
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  line-height: 1.1;
 }
 
+h2 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 100px 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 40px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.btn-primary {
+  background: #2C5F4A;
+  color: white;
+  box-shadow: 0 4px 12px rgba(44, 95, 74, 0.2);
+}
+
+.btn-primary:hover {
+  background: #1F4536;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(44, 95, 74, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid #2C5F4A;
+  color: #2C5F4A;
+}
+
+.btn-outline:hover {
+  background: #2C5F4A;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-light {
+  background: white;
+  color: #2C5F4A;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.btn-light:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 24px 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.navbar.scrolled {
+  background: white;
+  padding: 16px 0;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: 'Cormorant Garamond', serif;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar.scrolled .logo {
+  color: #2C5F4A;
+}
+
+.logo span {
+  font-weight: 400;
+  color: #E8B86B;
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.navbar.scrolled .nav-links a {
+  color: #1A2C3E;
+}
+
+.nav-links a:hover {
+  color: #E8B86B;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 200px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s;
+  list-style: none;
+  padding: 8px 0;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li a {
+  color: #1A2C3E !important;
+  padding: 10px 20px;
+  display: block;
+  font-size: 0.9rem;
+}
+
+.dropdown-menu li a:hover {
+  background: #F5F5F5;
+  color: #2C5F4A !important;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+.navbar.scrolled .hamburger {
+  color: #1A2C3E;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1A3C2F 0%, #2C5F4A 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="80" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+  background-size: 50px 50px;
+  opacity: 0.5;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  color: white;
+  padding: 0 24px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  padding: 6px 16px;
+  border-radius: 40px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  margin-bottom: 24px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.hero-image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 45%;
+  height: 80%;
+  background: url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=600') center/cover;
+  opacity: 0.15;
+}
+
+/* Section Headers */
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.section-header .subtitle {
+  color: #E8B86B;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+}
+
+.section-header h2 {
+  margin-bottom: 16px;
+}
+
+.section-header p {
+  color: #6B7A8A;
+}
+
+/* About Section */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-image {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-text h3 {
+  color: #2C5F4A;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  color: #5A6B7A;
+  margin-bottom: 24px;
+  line-height: 1.7;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.stat {
+  text-align: center;
+  padding: 20px;
+  background: #F8F9FA;
+  border-radius: 16px;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2C5F4A;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #6B7A8A;
+  margin-top: 4px;
+}
+
+/* Mission Section */
+.mission {
+  background: #F8F9FA;
+}
+
+.mission-card {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 48px;
+  background: white;
+  border-radius: 32px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.mission-card i {
+  font-size: 3rem;
+  color: #E8B86B;
+  margin-bottom: 24px;
+}
+
+.mission-card h3 {
+  color: #2C5F4A;
+  margin-bottom: 16px;
+}
+
+.mission-card p {
+  color: #5A6B7A;
+  line-height: 1.7;
+}
+
+/* Activities Grid */
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.activity-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: block;
+}
+
+.activity-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.activity-image {
+  height: 220px;
+  overflow: hidden;
+}
+
+.activity-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.activity-card:hover .activity-image img {
+  transform: scale(1.05);
+}
+
+.activity-content {
+  padding: 20px;
+}
+
+.activity-content h4 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #1A2C3E;
+}
+
+.activity-content p {
+  color: #6B7A8A;
+  font-size: 0.9rem;
+}
+
+/* CTA Section */
+.cta {
+  background: linear-gradient(135deg, #2C5F4A 0%, #1F4536 100%);
+  color: white;
+  text-align: center;
+  padding: 80px 0;
+}
+
+.cta h2 {
+  margin-bottom: 16px;
+}
+
+.cta p {
+  margin-bottom: 32px;
+  opacity: 0.9;
+}
+
+/* Contact Section */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  background: white;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.contact-info {
+  background: #2C5F4A;
+  color: white;
+  padding: 48px;
+}
+
+.contact-info h3 {
+  color: white;
+  margin-bottom: 32px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.info-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.info-text p:first-child {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.info-text p:last-child {
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.social-contact {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.social-contact a {
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.3s;
+}
+
+.social-contact a:hover {
+  background: #E8B86B;
+  transform: translateY(-3px);
+}
+
+.contact-form {
+  padding: 48px;
+}
+
+.contact-form h3 {
+  color: #2C5F4A;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid #E5E8EC;
+  border-radius: 12px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #2C5F4A;
+  box-shadow: 0 0 0 3px rgba(44, 95, 74, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Footer */
+.footer {
+  background: #0F1F1A;
+  color: #9AB0A8;
+  padding: 60px 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 50px;
+  margin-bottom: 40px;
+}
+
+.footer-col h4 {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.footer-col p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #9AB0A8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #E8B86B;
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+}
+
+.social-links a {
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.3s;
+}
+
+.social-links a:hover {
+  background: #E8B86B;
+  transform: translateY(-3px);
+}
+
+.newsletter {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.newsletter input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 40px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.newsletter input::placeholder {
+  color: #9AB0A8;
+}
+
+.newsletter button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 40px;
+  background: #E8B86B;
+  color: #1A2C3E;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.newsletter button:hover {
+  background: #DBA44C;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.8rem;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  section {
+    padding: 70px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 80%;
+    height: calc(100vh - 80px);
+    background: white;
+    flex-direction: column;
+    padding: 40px;
+    gap: 25px;
+    transition: left 0.3s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+  
+  .nav-links.active {
+    left: 0;
+  }
+  
+  .nav-links a {
+    color: #1A2C3E !important;
+  }
+  
+  .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    padding-left: 20px;
+    display: none;
+  }
+  
+  .dropdown.active .dropdown-menu {
+    display: block;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .stats {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .activities-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-info,
+  .contact-form {
+    padding: 32px;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+  
+  .newsletter {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 20px;
+  }
+  
+  .hero-content {
+    padding: 0;
+  }
+  
+  .mission-card {
+    padding: 32px 24px;
+  }
+}
 </style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar">
-<div class="nav-container container">
-<div class="logo">
-<img src="logo.jpeg" alt="HEAL Logo">
-</div>
-<div class="nav-links">
-<a href="#">Home</a>
-<a href="#about">About</a>
-<a href="#mission">Mission</a>
-<a href="#gallery">Gallery</a>
-<a href="#contact">Contact</a>
-</div>
-<div class="hamburger"><i class="fas fa-bars"></i></div>
-</div>
+  <div class="nav-container container">
+    <a href="#" class="logo">HEAL<span>.</span></a>
+    <div class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li class="dropdown">
+        <a href="#">Cabinet <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="team.html">Main Cabinet</a></li>
+          <li><a href="khairpur.html">Khairpur Team</a></li>
+          <li><a href="karachi.html">Karachi Team</a></li>
+          <li><a href="hyderabad.html">Hyderabad Team</a></li>
+          <li><a href="sukkur.html">Sukkur Team</a></li>
+        </ul>
+      </li>
+      <li><a href="#activities">Activities</a></li>
+	<li><a href="gallery.html">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-<div class="hidden">
-<h1>Empowering Futures Through Education & Leadership</h1>
-<p>HEAL empowers orphanages and street children across Sindh through digital skills, health awareness and leadership training.</p>
-<button class="btn btn-primary">Become a Volunteer</button>
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSc2N7dQnL2y0iOEjSTd_jaCz8HaIlTamo7Tu_oNIPLQNefpdQ/viewform?usp=dialog" target="_blank" class="btn btn-accent">
-  Register Now
-</a>
-</div>
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">Making a Difference Since 2025</div>
+      <h1>Health, Education,<br>Action & Leadership</h1>
+      <p>Empowering orphanages and street children across Sindh through digital skills, health awareness, and leadership training.</p>
+      <div class="hero-buttons">
+        <a href="#about" class="btn btn-light">Learn More</a>
+        <a href="#contact" class="btn btn-outline" style="border-color: white; color: white;">Join Us</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-image"></div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="section">
-<div class="container about-grid hidden">
-<div class="about-img">
-<img src="cabinate.jpeg" alt="">
-</div>
-<div class="about-text">
-<h2>About HEAL</h2>
-<p>We provide digital, leadership and health skills training that fosters independence and civic
-     responsibility, shaping a brighter future for communities across Sindh.</p>
-</div>
-</div>
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="./pics/Cabinate.jpeg" alt="HEAL Team">
+      </div>
+      <div class="about-text">
+        <h3>Who We Are</h3>
+        <p>HEAL is a non-profit organization dedicated to transforming lives through education, health awareness, and leadership development. We work directly with orphanages and street children across Sindh, providing them with the tools they need to build better futures.</p>
+        <p>Our holistic approach combines digital literacy, health education, and leadership training to create lasting impact in communities.</p>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Communities</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Children Impacted</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Active Programs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- MISSION -->
-<section id="mission" class="section">
-<div class="mission-box hidden text-center">
-<h2>Our Mission</h2>
-<br>
-<p>
-HEAL empowers orphanages and street children across Sindh by providing digital, leadership and
- health skills training, fostering independence, and promoting civic responsibility, shaping a brighter 
- future for themselves and Pakistan.
-</p>
-</div>
+<section class="mission">
+  <div class="container">
+    <div class="mission-card">
+      <i class="fas fa-bullseye"></i>
+      <h3>Our Mission</h3>
+      <p>HEAL empowers orphanages and street children across Sindh by providing digital, leadership and health skills training, fostering independence, and promoting civic responsibility, shaping a brighter future for themselves and Pakistan.</p>
+    </div>
+  </div>
 </section>
 
-<!-- GALLERY -->
-<section id="gallery" class="section">
-<div class="container hidden">
-<h2 class="text-center">Our Activities</h2>
-<br><br>
-<div class="gallery-grid">
-
-<div class="gallery-item">
-<img src="cabinate.jpeg">
-<div class="gallery-overlay"><i class="fas fa-heart"></i></div>
-</div>
-
-<div class="gallery-item">
-<img src="pic1.jpeg">
-<div class="gallery-overlay"><i class="fas fa-graduation-cap"></i></div>
-</div>
-
-<div class="gallery-item">
-<img src="blood.jpeg">
-<div class="gallery-overlay"><i class="fas fa-users"></i></div>
-</div>
-
-<div class="gallery-item">
-<img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80">
-<div class="gallery-overlay"><i class="fas fa-hand-holding-heart"></i></div>
-</div>
-
-</div>
-</div>
+<section id="activities">
+  <div class="container">
+    <div class="section-header">
+      <div class="subtitle">What We Do</div>
+      <h2>Our Activities</h2>
+      <p>Join us in making a difference through these impactful initiatives</p>
+    </div>
+    <div class="activities-grid">
+      <div class="activity-card">
+        <div class="activity-image">
+          <img src="pic1.jpeg" alt="Visit Sweet Home">
+        </div>
+        <div class="activity-content">
+          <h4>Visit Sweet Home</h4>
+          <p>Regular visits to orphanages providing care, education, and emotional support to children.</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-image">
+          <img src="blood.jpeg" alt="Blood Donation">
+        </div>
+        <div class="activity-content">
+          <h4>Blood Donation Camp</h4>
+          <p>Organizing blood donation drives to support healthcare needs in local communities.</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-image">
+          <img src="c1.jpeg" alt="Iftar Dinner">
+        </div>
+        <div class="activity-content">
+          <h4>Iftar Dinner Dastarkhuwa</h4>
+          <p>Community iftar gatherings bringing people together during the holy month of Ramadan.</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-image">
+          <img src="s2.jpeg" alt="Youth Empowerment">
+        </div>
+        <div class="activity-content">
+          <h4>Youth Empowerment Session</h4>
+          <p>Workshops focused on developing leadership skills and personal growth.</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-image">
+          <img src="s4.jpeg" alt="Cancer Awareness">
+        </div>
+        <div class="activity-content">
+          <h4>Cancer Awareness</h4>
+          <p>Educational sessions on cancer prevention, early detection, and treatment options.</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-image">
+          <img src="s6.jpeg" alt="Ramadan Nutrition">
+        </div>
+        <div class="activity-content">
+          <h4>Ramadan Nutrition Awareness</h4>
+          <p>Guidance on healthy eating habits during fasting and proper nutrition.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- CTA -->
 <section class="cta">
-<h2>Join Us in Making a Difference</h2>
-<button class="btn btn-accent">Support HEAL Today</button>
+  <div class="container">
+    <h2>Join Us in Making a Difference</h2>
+    <p>Every contribution helps us reach more children and transform more lives.</p>
+    <button class="btn btn-light" id="supportBtn">Support HEAL Today</button>
+  </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="section">
-<div class="container hidden">
-<h2 class="text-center">Contact Us</h2>
-<br><br>
-<div class="contact-wrapper">
-<div class="contact-info">
-<h3>Contact Info</h3>
-<p><i class="fas fa-map-marker-alt"></i> Gambat, Pakistan</p>
-<p><i class="fas fa-envelope"></i> info@heal.org</p>
-</div>
-<div class="contact-form">
-<h3>Send Message</h3>
-<form>
-<div class="form-group"><input type="text" placeholder="Your Name" required></div>
-<div class="form-group"><input type="email" placeholder="Your Email" required></div>
-<div class="form-group"><textarea placeholder="Your Message" required></textarea></div>
-<button class="btn btn-primary">Send Message</button>
-</form>
-</div>
-</div>
-</div>
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <div class="subtitle">Get In Touch</div>
+      <h2>Contact Us</h2>
+      <p>We'd love to hear from you. Reach out with any questions or to get involved.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Let's Connect</h3>
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="info-text">
+            <p>Location</p>
+            <p>Hyderabad, Pakistan</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-envelope"></i></div>
+          <div class="info-text">
+            <p>Email</p>
+            <p>heal.org.pk@gmail.com</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+          <div class="info-text">
+            <p>Phone</p>
+            <p>+92 318 1325375</p>
+          </div>
+        </div>
+        <div class="social-contact">
+          <a href="https://www.facebook.com/share/17vQTa4CCo/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/heal.org1?igsh=MTZrMTNlMGhmNHVkMA==" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/heal-organization/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/923181325375" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Send a Message</h3>
+        <form id="contactForm">
+          <div class="form-group">
+            <input type="text" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <textarea placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+        <p id="successMsg" style="display:none; color: #2C5F4A; margin-top: 16px;">✓ Message sent successfully!</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <footer class="footer">
-<p>© 2026 HEAL | Health Education Action Leadership</p>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>HEAL</h4>
+        <p>Empowering communities through education, health awareness, and leadership programs across Sindh.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/share/17vQTa4CCo/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/heal.org1?igsh=MTZrMTNlMGhmNHVkMA==" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/heal-organization/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/923181325375" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#activities">Activities</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>Hyderabad, Pakistan</li>
+          <li>heal.org.pk@gmail.com</li>
+          <li>+92 318 1325375</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p>Subscribe for updates and events.</p>
+        <div class="newsletter">
+          <input type="email" id="newsEmail" placeholder="Your email">
+          <button id="subscribeBtn">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 HEAL NGO | Designed with ❤️ for community impact</p>
+    </div>
+  </div>
 </footer>
 
 <script>
-const navbar=document.querySelector(".navbar");
-window.addEventListener("scroll",()=>{
-navbar.classList.toggle("scrolled",window.scrollY>50);
+// Navbar scroll effect
+const navbar = document.querySelector('.navbar');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
 });
-const hamburger=document.querySelector(".hamburger");
-const navLinks=document.querySelector(".nav-links");
-hamburger.addEventListener("click",()=>{
-navLinks.classList.toggle("active");
+
+// Mobile menu toggle
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  const icon = hamburger.querySelector('i');
+  if (navLinks.classList.contains('active')) {
+    icon.classList.remove('fa-bars');
+    icon.classList.add('fa-times');
+  } else {
+    icon.classList.remove('fa-times');
+    icon.classList.add('fa-bars');
+  }
 });
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){entry.target.classList.add("show");}
+
+// Close mobile menu on link click
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    const icon = hamburger.querySelector('i');
+    icon.classList.remove('fa-times');
+    icon.classList.add('fa-bars');
+  });
 });
+
+// Dropdown for mobile
+document.querySelectorAll('.dropdown').forEach(dropdown => {
+  const link = dropdown.querySelector('a');
+  link.addEventListener('click', (e) => {
+    if (window.innerWidth < 768) {
+      e.preventDefault();
+      dropdown.classList.toggle('active');
+    }
+  });
 });
-document.querySelectorAll(".hidden").forEach(el=>observer.observe(el));
+
+// Form submission
+const contactForm = document.getElementById('contactForm');
+const successMsg = document.getElementById('successMsg');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    successMsg.style.display = 'block';
+    contactForm.reset();
+    setTimeout(() => {
+      successMsg.style.display = 'none';
+    }, 5000);
+  });
+}
+
+// Support button
+const supportBtn = document.getElementById('supportBtn');
+if (supportBtn) {
+  supportBtn.addEventListener('click', () => {
+    alert('Thank you for supporting HEAL! 🙌 Contact us to donate or volunteer.');
+  });
+}
+
+// Newsletter
+const subscribeBtn = document.getElementById('subscribeBtn');
+const newsEmail = document.getElementById('newsEmail');
+
+if (subscribeBtn) {
+  subscribeBtn.addEventListener('click', () => {
+    const email = newsEmail.value.trim();
+    if (!email || !email.includes('@')) {
+      alert('Please enter a valid email address.');
+    } else {
+      alert(`Thank you ${email}! You're now subscribed to HEAL updates.`);
+      newsEmail.value = '';
+    }
+  });
+}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href === '#') return;
+    const target = document.querySelector(href);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
 </script>
-
 </body>
-
 </html>
-
-
-
-
