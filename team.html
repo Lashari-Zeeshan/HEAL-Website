@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HEAL | Our Team</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+/* ===== GLOBAL ===== */
+body{
+font-family:'Poppins',sans-serif;
+margin:0;
+background:#f7f9fb;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:40px 20px;
+}
+
+h1{text-align:center;margin-bottom:20px}
+
+/* ===== FILTERS ===== */
+.filters{
+text-align:center;
+margin-bottom:30px;
+}
+
+.filters button{
+padding:10px 20px;
+margin:5px;
+border:none;
+border-radius:20px;
+cursor:pointer;
+background:#ddd;
+}
+
+.filters button.active{
+background:#1f6f5c;
+color:white;
+}
+
+/* SEARCH */
+.search{
+text-align:center;
+margin-bottom:30px;
+}
+
+.search input{
+padding:10px;
+width:250px;
+border-radius:20px;
+border:1px solid #ccc;
+}
+
+/* ===== TEAM GRID ===== */
+.team-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+/* ===== CARD ===== */
+.team-card{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+cursor:pointer;
+transition:.4s;
+}
+
+.team-card:hover{
+transform:translateY(-10px);
+}
+
+.team-img{
+height:240px;
+overflow:hidden;
+}
+
+.team-img img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:.4s;
+}
+
+.team-card:hover img{
+transform:scale(1.1);
+}
+
+.team-content{
+padding:15px;
+text-align:center;
+}
+
+.role{
+color:#1f6f5c;
+font-weight:600;
+font-size:0.9rem;
+}
+
+/* ===== FEATURED (FOUNDERS) ===== */
+.featured{
+grid-column: span 2;
+display:flex;
+align-items:center;
+gap:20px;
+padding:15px;
+}
+
+.featured .team-img{
+height:180px;
+width:180px;
+flex-shrink:0;
+}
+
+.featured .team-img img{
+border-radius:20px;
+}
+
+/* ===== SOCIAL ===== */
+.socials{
+margin-top:10px;
+}
+
+.socials a{
+margin:0 6px;
+color:#555;
+transition:0.3s;
+}
+
+.socials a:hover{
+color:#1f6f5c;
+}
+
+/* ===== MODAL ===== */
+.modal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.modal-content{
+background:white;
+padding:30px;
+border-radius:20px;
+max-width:400px;
+text-align:center;
+position:relative;
+}
+
+.modal-content img{
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:15px;
+}
+
+.close{
+position:absolute;
+top:10px;
+right:15px;
+font-size:20px;
+cursor:pointer;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+.featured{
+flex-direction:column;
+text-align:center;
+grid-column: span 1;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Meet Our Team</h1>
+
+<!-- SEARCH -->
+<div class="search">
+<input type="text" id="searchInput" placeholder="Search member...">
+</div>
+
+<!-- FILTERS -->
+<div class="filters">
+<button onclick="filterTeam('all')" class="active">All</button>
+<button onclick="filterTeam('leader')">Leadership</button>
+<button onclick="filterTeam('core')">Core Team</button>
+<button onclick="filterTeam('volunteer')">Team Leaders</button>
+</div>
+
+<!-- ===== FOUNDERS ===== -->
+<div class="team-grid">
+
+<div class="team-card featured" data-category="leader" onclick="openModal(this)">
+<div class="team-img">
+<img src="faisal.jpeg">
+</div>
+<div class="team-content">
+<h3>Faisal Waseem</h3>
+<div class="role">Founder | CEO</div>
+<p class="hidden-info">Led 5+ NGO projects and community initiatives.</p>
+<div class="socials">
+<a href="https://www.facebook.com/share/1NL6QLMGor/"><i class="fab fa-facebook"></i></a>
+<a href="https://www.linkedin.com/in/faisal-waseem-682663320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+<a href="https://www.instagram.com/drfaisal0055?igsh=MWZqanlyeGc0cHI0aA=="><i class="fab fa-instagram"></i></a>
+<a href="https://wa.me/923181325375"><i class="fab fa-whatsapp"></i></a>
+</div>
+</div>
+</div>
+
+<div class="team-card featured" data-category="leader" onclick="openModal(this)">
+<div class="team-img">
+<img src="iqra.jpeg">
+</div>
+<div class="team-content">
+<h3>Dr Iqra</h3>
+<div class="role">Co-Founder</div>
+<p class="hidden-info">Driving strategic growth and impact.</p>
+<div class="socials">
+
+<a href="https://www.linkedin.com/in/dr-iqra-b514a4343"><i class="fab fa-linkedin"></i></a>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<hr style="margin:50px 0;">
+
+<!-- ===== CORE TEAM ===== -->
+
+<div class="team-grid">
+
+<div class="team-card" data-category="core" onclick="openModal(this)">
+<div class="team-img"><img src="jaswant.jpeg""></div>
+<div class="team-content">
+<h3>Jaswant Kumar</h3>
+<div class="role">President</div>
+<p class="hidden-info"></p>
+<div class="socials">
+
+<a href="https://www.linkedin.com/in/jaswant-kumar-2a477a319?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+
+</div>
+</div>
+</div>
+
+<div class="team-card" data-category="core" onclick="openModal(this)">
+
+<div class="team-img"><img src="shahrukh.jpeg"></div>
+<div class="team-content">
+<h3>Sharukh Kumar</h3>
+<div class="role">Vice President</div>
+<p class="hidden-info"></p>
+<div class="socials">
+<a href="https://www.facebook.com/shahrukh.prince.7359?mibextid=ZbWKwL"><i class="fab fa-facebook"></i></a>
+<a href="https://www.linkedin.com/authwall?trk=bf&trkInfo=AQFdSK54uAiz4wAAAZ0vLPoQmfJq8HRJ_P1qAC0irMq1-jbCED5QWeoXGXXhCr-DdkisrpRbOcb8tupNmX9k4waZTLOGsTyEU4uBIpXzVpgB1D-iF1FPgbeaL9hVO3E52IilG00=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fshahrukh-kumar-748913321%3Futm_source%3Dshare_via%26utm_content%3Dprofile%26utm_medium%3Dmember_android"><i class="fab fa-linkedin"></i></a>
+
+</div>
+</div>
+</div>
+
+<div class="team-card" data-category="core" onclick="openModal(this)">
+<div class="team-img"><img src="rasheed.jpeg"></div>
+<div class="team-content">
+<h3>Abdul Rasheed</h3>
+<div class="role">Director</div>
+<p class="hidden-info"></p>
+<div class="socials">
+<a href="https://www.facebook.com/rasheed.khaskheli.9465?mibextid=ZbWKwL"><i class="fab fa-facebook"></i></a>
+
+<a href="https://www.instagram.com/rasheed.khaskheli.9465?igsh=bm9zNThyNjRwZzQ3"><i class="fab fa-instagram"></i></a>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="team-card" data-category="core" onclick="openModal(this)">
+<div class="team-img"><img src="k.jpeg"></div>
+<div class="team-content">
+<h3>Khadija</h3>
+<div class="role">General Secrectory</div>
+<p class="hidden-info">Organized 30+ workshops.</p>
+<div class="socials">
+
+<a href="https://www.linkedin.com/in/khadija-soomro-57a678332?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+<a href="https://www.instagram.com/optometrist010?igsh=MWhtcW1qbGd5czl1bg=="><i class="fab fa-instagram"></i></a>
+</div>
+</div>
+</div>
+
+<div class="team-card" data-category="core" onclick="openModal(this)">
+<div class="team-img"><img src="nand.jpeg"></div>
+<div class="team-content">
+<h3>Nand Lal</h3>
+<div class="role">Joint Secrectory</div>
+<p class="hidden-info"></p>
+<div class="socials">
+<a href="https://www.facebook.com/nandlal.chauhan.221588?rdid=WJqNAvqigkpSGLg1&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18FCgQpCRL%2F#"><i class="fab fa-facebook"></i></a>
+<a href="https://www.linkedin.com/authwall?trk=bf&trkInfo=AQGzzVEvF_2eRwAAAZ0zZP5wMitVaMn_kZspU5ga6aIJFB_J73znIm6hmf4rU7HCGzjww5v0k6ZjcQBtNouygNRAlIPp5214S1HHwJnwrHf8LrmDgORyoSyKxD-zVMoR6zgN84E=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fnand-lal-chauhan-762710329%3Futm_source%3Dshare_via%26utm_content%3Dprofile%26utm_medium%3Dmember_android"><i class="fab fa-linkedin"></i></a>
+
+</div>
+</div>
+</div>
+
+
+
+<div class="team-card" data-category="core" onclick="openModal(this)">
+<div class="team-img"><img src="gulab.jpeg"></div>
+<div class="team-content">
+<h3>Gulab Rai</h3>
+<div class="role">Financr Secrectory</div>
+<p class="hidden-info"></p>
+<div class="socials">
+<a href="https://www.facebook.com/share/1AtcCkYRTc/"><i class="fab fa-facebook"></i></a>
+<a href="https://www.linkedin.com/in/gulab-rai-645957389?utm_source=share_via&utm_content=profile&utm_medium=member_android"><i class="fab fa-linkedin"></i></a>
+
+</div>
+</div>
+</div>
+
+
+
+<div class="team-card" data-category="core" onclick="openModal(this)">
+<div class="team-img"><img src="img.png"></div>
+<div class="team-content">
+<h3>Raheela</h3>
+<div class="role">Media Cordinator</div>
+<p class="hidden-info"></p>
+<div class="socials">
+
+</div>
+</div>
+</div>
+
+
+
+<div class="team-card" data-category="core" onclick="openModal(this)">
+<div class="team-img"><img src="fiza.jpeg"></div>
+<div class="team-content">
+<h3>Fiza Wasi Rajput</h3>
+<div class="role">Female Cordinator</div>
+<p class="hidden-info"></p>
+<div class="socials">
+
+<a href="https://www.linkedin.com/in/fiza-wasi-rajput-884957323?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<hr style="margin:50px 0;">
+
+
+
+
+
+
+<div class="team-grid">
+
+
+
+
+<div class="team-card" data-category="volunteer" onclick="openModal(this)">
+<div class="team-img"><img src="b.jpg"></div>
+<div class="team-content">
+<h3>Bakhat Ali </h3>
+<div class="role">Khairpur Team Leader</div>
+<p class="hidden-info">Aspire Community Leader & Community Leader  </p>
+<div class="socials">
+<a href="https://www.facebook.com/share/17k5H1MwdX/"><i class="fab fa-facebook"></i></a>
+<a href="https://www.linkedin.com/in/bakhat-ali-a14609378?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+<a href="https://www.instagram.com/zeeshan_khan_khp?igsh=MTVrazN3cXVuemhpMw=="><i class="fab fa-instagram"></i></a>
+<a href="https://github.com/Lashari-Zeeshan/"><i class="fab fa-github"></i></a>
+<a href ="https://x.com/ZeeshanKhan_khp"><i class="fab fa-twitter"></i></a>
+<a href="https://wa.me/923053241800"><i class="fab fa-whatsapp"></i></a>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="team-card" data-category="volunteer" onclick="openModal(this)">
+<div class="team-img"><img src="img.png"></div>
+<div class="team-content">
+<h3>Dr Poonam Mahraj</h3>
+<div class="role">Karachi Team Leader</div>
+<p class="hidden-info"></p>
+<div class="socials">
+
+<a href="https://www.linkedin.com/in/poonam-mahraj?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+<a href="https://www.instagram.com/healing_globally/"><i class="fab fa-instagram"></i></a>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<div class="team-card" data-category="volunteer" onclick="openModal(this)">
+<div class="team-img"><img src="ravi.jpeg"></div>
+<div class="team-content">
+<h3>Ravi Shankae</h3>
+<div class="role">Hyderabad Team Leader</div>
+<p class="hidden-info"></p>
+<div class="socials">
+<a href="https://www.facebook.com/share/1DDibCujA9/"><i class="fab fa-facebook"></i></a>
+<a href="https://www.linkedin.com/in/ravi-shanker-613b97334?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<div class="team-card" data-category="volunteer" onclick="openModal(this)">
+<div class="team-img"><img src="aiman.jpeg"></div>
+<div class="team-content">
+<h3>Aiman Zahra</h3>
+<div class="role">Sukkur Team Leader</div>
+<p class="hidden-info"></p>
+<div class="socials">
+
+<a href="https://www.linkedin.com/in/aiman-zahra-a92644336"><i class="fab fa-linkedin"></i></a>
+
+</div>
+</div>
+</div>
+
+
+
+</div>
+
+
+<!-- ===== VOLUNTEERS ===== -->
+
+
+
+
+
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal()">✖</span>
+<img id="modalImg">
+<h3 id="modalName"></h3>
+<p id="modalRole"></p>
+<p id="modalDesc"></p>
+</div>
+</div>
+
+<script>
+
+/* FILTER */
+function filterTeam(category){
+let cards=document.querySelectorAll(".team-card");
+document.querySelectorAll(".filters button").forEach(btn=>btn.classList.remove("active"));
+event.target.classList.add("active");
+
+cards.forEach(card=>{
+if(category==="all" || card.dataset.category===category){
+card.style.display="block";
+}else{
+card.style.display="none";
+}
+});
+}
+
+/* SEARCH */
+document.getElementById("searchInput").addEventListener("keyup", function(){
+let value=this.value.toLowerCase();
+document.querySelectorAll(".team-card").forEach(card=>{
+let name=card.innerText.toLowerCase();
+card.style.display=name.includes(value) ? "block" : "none";
+});
+});
+
+/* MODAL */
+function openModal(card){
+document.getElementById("modal").style.display="flex";
+document.getElementById("modalImg").src=card.querySelector("img").src;
+document.getElementById("modalName").innerText=card.querySelector("h3").innerText;
+document.getElementById("modalRole").innerText=card.querySelector(".role").innerText;
+document.getElementById("modalDesc").innerText=card.querySelector(".hidden-info")?.innerText || "";
+}
+
+function closeModal(){
+document.getElementById("modal").style.display="none";
+}
+
+</script>
+
+</body>
+</html>
